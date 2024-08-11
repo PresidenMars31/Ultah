@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .parallax {
+            height: 100vh;
+            background: url('foto1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+        .hidden-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ff5733;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        .hidden-button:active {
+            background-color: #c70039;
+        }
+        .parallax + .section {
+            background: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="content">
+            <h1>SELAMAT ULANG TAHUN RISKITA AMALIA</h1>
+            <p>Semoga hari ini menjadi hari yang istimewa untukmu,ya meskipun udah lewat beberapa hari sihhh .</p>
+        </div>
+    </div>
+    <div class="section">
+        <button class="button" onclick="window.location.href='traktiran.html';">Minta Traktiran</button>
+        <button class="button whatsapp-button" onclick="window.location.href='https://wa.me/+6282234446030';">Chat di WhatsApp</button>
+    </div>
+    <button class="hidden-button" onclick="window.location.href='video.html';">🎥</button>
+
+    <script>
+        // Display the hidden button on scroll
+        window.addEventListener('scroll', function() {
+            const hiddenButton = document.querySelector('.hidden-button');
+            if (window.scrollY > window.innerHeight / 2) {
+                hiddenButton.style.display = 'block';
+            } else {
+                hiddenButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

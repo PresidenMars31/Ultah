@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kontak WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px
+            
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="link"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #25D366; /* Warna hijau WhatsApp */
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #128C7E; /* Warna hijau WhatsApp saat hover */
+        .back-button {
+                display: inline-block;
+                margin-top: 20px;
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>UNTUK YANG ULANG TAHUN</h1>
+        <p>Selamat ulang tahun riskita, semoga sehat selalu, semoga cepat lulus , rejeki nya lancar,segera dapet jodoh,dan semoga apa yang kamu semogakan segera terwujud, aamiin..</p>
+
+        <p> coba kirimin deh apa yang dirimu mau, kalo masih terjangkau sih mau aku beliin, tapi kalo mahal ya tak download in gambarnya aja hehehehe...</p>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Nama barang" required>
+            <input type="link" id="link" name="link" placeholder="link market place" required>
+            <textarea id="address" name="address" rows="4" placeholder="alamat" required></textarea>
+            <input type="submit" value="Kirim Pesan">
+            <a class="button back-button" href="index.html">Kembali</a>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var name = encodeURIComponent(document.getElementById('name').value);
+            var email = encodeURIComponent(document.getElementById('link').value);
+            var message = encodeURIComponent(document.getElementById('address').value);
+            
+            var phoneNumber = '+6282234446030'; // Ganti dengan nomor <market></market>pp yang valid
+            var url = `https://wa.me/${phoneNumber}?text=Nama barang:%20${name}%0ALink market place:%20${email}%0AAlamat:%20${message}`;
+            
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
